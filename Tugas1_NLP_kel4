@@ -1,0 +1,122 @@
+from bpe import Encoder
+file = open("output.txt",'w')
+
+test_corpus = '''
+Raden Adjeng Kartini (21 April 1879 – 17 September 1904) atau sebenarnya lebih tepat disebut Raden Ayu Kartini[a] adalah seorang tokoh Jawa dan Pahlawan Nasional Indonesia.[1] Kartini dikenal sebagai pelopor kebangkitan perempuan Nusantara. Ia adalah seorang aktivis Indonesia terkemuka yang mengadvokasi hak-hak perempuan dan pendidikan perempuan.
+
+Ia dilahirkan dalam keluarga bangsawan Jawa di Hindia Belanda (sekarang Indonesia). Setelah bersekolah di sekolah dasar berbahasa Belanda, ia ingin melanjutkan pendidikan lebih lanjut, tetapi perempuan Jawa saat itu dilarang mengenyam pendidikan tinggi. Ia bertemu dengan berbagai pejabat dan orang berpengaruh, termasuk J.H. Abendanon, yang bertugas melaksanakan Kebijakan Etis Belanda.
+
+Setelah kematiannya, saudara perempuannya melanjutkan pembelaannya untuk mendidik anak perempuan dan perempuan.[2] Surat-surat Kartini diterbitkan di sebuah majalah Belanda dan akhirnya, pada tahun 1911, menjadi karya: Habis Gelap Terbitlah Terang, Kehidupan Perempuan di Desa, dan Surat-Surat Putri Jawa. Ulang tahunnya sekarang dirayakan di Indonesia sebagai Hari Kartini untuk menghormatinya, serta beberapa sekolah dinamai menurut namanya dan sebuah yayasan didirikan atas namanya untuk membiayai pendidikan anak perempuan di Indonesia. Dia tertarik pada mistisisme dan menentang poligami.
+
+Biografi
+
+Ayah Kartini, R.M.A.A. Sosroningrat.
+Raden Adjeng Kartini berasal dari kalangan priyayi atau kelas bangsawan Jawa. Ia merupakan putri dari Raden Mas Adipati Ario Sosroningrat, seorang patih yang diangkat menjadi bupati Jepara segera setelah Kartini lahir. Kartini adalah putri dari istri pertama, tetapi bukan istri utama. Ibunya bernama M.A. Ngasirah, putri dari Nyai Haji Siti Aminah dan Kyai Haji Madirono, seorang guru agama di Telukawur, Jepara. Dari sisi ayahnya, silsilah Kartini dapat dilacak hingga Hamengkubuwana VI. Garis keturunan Bupati Sosroningrat bahkan dapat ditilik kembali ke istana Kerajaan Majapahit. Semenjak Pangeran Dangirin menjadi bupati Surabaya pada abad ke-18, nenek moyang Sosroningrat mengisi banyak posisi penting di Pangreh Praja.[3]
+
+Ayah Kartini pada mulanya adalah seorang wedana di Mayong. Peraturan kolonial waktu itu mengharuskan seorang bupati beristerikan seorang bangsawan. Karena M.A. Ngasirah bukanlah bangsawan tinggi,[4] maka ayahnya menikah lagi dengan Raden Adjeng Woerjan (Moerjam), keturunan langsung Raja Madura.[3] Setelah perkawinan itu, ayah Kartini diangkat menjadi bupati di Jepara menggantikan kedudukan ayah kandung R.A. Woerjan, R.A.A. Tjitrowikromo.
+
+Kartini adalah anak ke-5 dari 11 bersaudara kandung dan tiri. Dari kesemua saudara sekandung, Kartini adalah anak perempuan tertua. Kakeknya, Pangeran Ario Tjondronegoro IV, diangkat bupati dalam usia 25 tahun dan dikenal pada pertengahan abad ke-19 sebagai salah satu bupati pertama yang memberi pendidikan Barat kepada anak-anaknya.[3] Kakak Kartini, Sosrokartono, adalah seorang yang pintar dalam bidang bahasa. Sampai usia 12 tahun, Kartini diperbolehkan bersekolah di Europeesche Lagere School (ELS). Di sini antara lain Kartini belajar bahasa Belanda. Namun, setelah usia 12 tahun, ia harus tinggal di rumah karena sudah bisa dipingit.
+
+
+Surat Kartini - Rosa Abendanon (fragmen)
+Karena Kartini bisa berbahasa Belanda, di rumah ia mulai belajar sendiri dan menulis surat kepada teman-teman korespondensi yang berasal dari Belanda. Salah satunya adalah Rosa Abendanon yang banyak mendukungnya. Dari buku-buku, koran, dan majalah Eropa, Kartini tertarik pada kemajuan berpikir perempuan Eropa. Timbul keinginannya untuk memajukan perempuan pribumi, karena ia melihat bahwa perempuan pribumi berada pada status sosial yang rendah.
+
+Kartini banyak membaca surat kabar Semarang De Locomotief yang diasuh Pieter Brooshooft. Ia juga menerima leestrommel (paket majalah yang diedarkan toko buku kepada langganan). Di antaranya terdapat majalah kebudayaan dan ilmu pengetahuan yang cukup berat, juga ada majalah wanita Belanda De Hollandsche Lelie. Kartini pun kemudian beberapa kali mengirimkan tulisannya dan dimuat di De Hollandsche Lelie. Dari surat-suratnya tampak Kartini membaca apa saja dengan penuh perhatian sambil membuat catatan-catatan. Kadang-kadang Kartini menyebut salah satu karangan atau mengutip beberapa kalimat. Perhatiannya tidak hanya semata-mata soal emansipasi wanita, tetapi juga masalah sosial umum. Kartini melihat perjuangan wanita agar memperoleh kebebasan, otonomi dan persamaan hukum sebagai bagian dari gerakan yang lebih luas. Di antara buku yang dibaca Kartini sebelum berumur 20, terdapat judul Max Havelaar dan Surat-Surat Cinta karya Multatuli, yang pada November 1901 sudah dibacanya dua kali. Selain itu, Kartini juga membaca De Stille Kraacht (Kekuatan Gaib) karya Louis Coperus dan karya Van Eeden yang bermutu tinggi, karya Augusta de Witt yang sedang-sedang saja, roman-feminis karya Nyonya Goekoop de-Jong Van Beek dan sebuah roman anti-perang karangan Berta Von Suttner, Die Waffen Nieder (Letakkan Senjata). Semuanya berbahasa Belanda.
+
+Oleh orang tuanya, Kartini dijodohkan dengan bupati Rembang, K.R.M. Adipati Ario Singgih Djojo Adhiningrat,[5] yang sudah pernah memiliki tiga istri. Kartini menikah pada tanggal 12 November 1903. Suaminya mengerti keinginan Kartini dan Kartini diberi kebebasan dan didukung mendirikan sekolah wanita di sebelah timur pintu gerbang kompleks kantor kabupaten Rembang, atau di sebuah bangunan yang kini digunakan sebagai Gedung Pramuka.
+
+
+Sekolah Kartini (Kartinischool), 1918.
+Anak satu-satunya, Soesalit Djojoadhiningrat, lahir pada tanggal 13 September 1904. Beberapa hari kemudian, 17 September 1904, Kartini meninggal pada usia 25 tahun. Kartini dimakamkan di Desa Bulu, Kecamatan Bulu, Rembang.
+
+Berkat kegigihan Kartini, belakangan didirikan Sekolah Wanita oleh Yayasan Kartini di Semarang pada 1912, dan kemudian di Surabaya, Yogyakarta, Malang, Madiun, Cirebon dan daerah lainnya. Nama sekolah tersebut adalah "Sekolah Kartini". Yayasan Kartini ini didirikan oleh keluarga Van Deventer, seorang tokoh Politik Etis.
+
+Meski tidak sempat berbuat banyak untuk kemajuan bangsa dan tanah air, Kartini mengemukakan ide-ide pembaruan masyarakat yang melampaui zamannya melalui surat-suratnya yang bersejarah.
+
+Cita-citanya yang tinggi dituangkan dalam surat-suratnya kepada kenalan dan sahabatnya orang Belanda di luar negeri, seperti Tuan EC Abendanon, Ny MCE Ovink-Soer, Zeehandelaar, Prof Dr GK Anton dan Ny Tuan HH von Kol, dan Ny HG de Booij-Boissevain. Surat-surat Kartini diterbitkan di negeri Belanda pada 1911 oleh Mr JH Abendanon dengan judul Door Duisternis tot Licht. Diterjemahkan ke bahasa Indonesia oleh sastrawan pujangga baru Armijn Pane pada 1922 dengan judul Habis Gelap Terbitlah Terang.[6]
+
+Surat-surat
+Setelah Kartini wafat, Jacques Abendanon mengumpulkan dan membukukan surat-surat yang pernah dikirimkan R.A Kartini pada teman-temannya di Eropa. Abendanon saat itu menjabat sebagai Menteri Kebudayaan, Agama, dan Kerajinan Hindia Belanda. Buku itu diberi judul Door Duisternis tot Licht yang arti harfiahnya "Dari Kegelapan Menuju Cahaya". Buku kumpulan surat Kartini ini diterbitkan pada 1911. Buku ini dicetak sebanyak lima kali, dan pada cetakan terakhir terdapat tambahan surat Kartini.
+
+Pada tahun 1922, Balai Pustaka menerbitkannya dalam bahasa Melayu dengan judul yang diterjemahkan menjadi Habis Gelap Terbitlah Terang: Boeah Pikiran, yang merupakan terjemahan oleh Empat Saudara. Kemudian tahun 1938, keluarlah Habis Gelap Terbitlah Terang versi Armijn Pane seorang sastrawan Pujangga Baru. Armijn membagi buku menjadi lima bab pembahasan untuk menunjukkan perubahan cara berpikir Kartini sepanjang waktu korespondensinya. Versi ini sempat dicetak sebanyak sebelas kali. Surat-surat Kartini dalam bahasa Inggris juga pernah diterjemahkan oleh Agnes L. Symmers. Selain itu, surat-surat Kartini juga pernah diterjemahkan ke dalam bahasa-bahasa Jawa dan Sunda.
+
+Terbitnya surat-surat Kartini, seorang perempuan pribumi, sangat menarik perhatian masyarakat Belanda, dan pemikiran-pemikiran Kartini mulai mengubah pandangan masyarakat Belanda terhadap perempuan pribumi di Jawa. Pemikiran-pemikiran Kartini yang tertuang dalam surat-suratnya juga menjadi inspirasi bagi tokoh-tokoh kebangkitan nasional Indonesia, antara lain W.R. Soepratman yang menciptakan lagu berjudul "Ibu Kita Kartini". Lagu tersebut menggambarkan inti perjuangan wanita untuk merdeka.
+
+Pemikiran
+
+Uang kertas pecahan IDR 5 cetakan tahun 1952 dengan gambar Kartini.
+Pada surat-surat Kartini tertulis pemikiran-pemikirannya tentang kondisi sosial saat itu, terutama tentang kondisi perempuan pribumi. Sebagian besar surat-suratnya berisi keluhan dan gugatan khususnya menyangkut budaya di Jawa yang dipandang sebagai penghambat kemajuan perempuan. Dia ingin wanita memiliki kebebasan menuntut ilmu dan belajar. Kartini menulis ide dan cita-citanya, seperti tertulis: Zelf-ontwikkeling dan Zelf-onderricht, Zelf- vertrouwen dan Zelf-werkzaamheid dan juga Solidariteit. Semua itu atas dasar Religieusiteit, Wijsheid en Schoonheid (yaitu Ketuhanan, Kebijaksanaan dan Keindahan), ditambah dengan Humanitarianisme (peri kemanusiaan) dan Nasionalisme (cinta tanah air).
+
+Surat-surat Kartini juga berisi harapannya untuk memperoleh pertolongan dari luar. Pada perkenalan dengan Estelle "Stella" Zeehandelaar, Kartini mengungkap keinginan untuk menjadi seperti kaum muda Eropa. Ia menggambarkan penderitaan perempuan Jawa akibat kungkungan adat, yaitu tidak bisa bebas duduk di bangku sekolah, harus dipingit, dinikahkan dengan laki-laki yang tak dikenal, dan harus bersedia dimadu.
+
+Surat-surat Kartini banyak mengungkap tentang kendala-kendala yang harus dihadapi ketika bercita-cita menjadi perempuan Jawa yang lebih maju. Meski memiliki seorang ayah yang tergolong maju karena telah menyekolahkan anak-anak perempuannya meski hanya sampai umur 12 tahun, tetap saja pintu untuk ke sana tertutup. Kartini sangat mencintai sang ayah, namun ternyata cinta kasih terhadap sang ayah tersebut juga pada akhirnya menjadi kendala besar dalam mewujudkan cita-cita. Sang ayah dalam surat juga diungkapkan begitu mengasihi Kartini. Ia disebutkan akhirnya mengizinkan Kartini untuk belajar menjadi guru di Betawi, meski sebelumnya tak mengizinkan Kartini untuk melanjutkan studi ke Belanda ataupun untuk masuk sekolah kedokteran di Betawi.
+
+Keinginan Kartini untuk melanjutkan studi, terutama ke Eropa, memang terungkap dalam surat-suratnya. Beberapa sahabat penanya mendukung dan berupaya mewujudkan keinginan Kartini tersebut. Ketika akhirnya Kartini membatalkan keinginan yang hampir terwujud tersebut, terungkap adanya kekecewaan dari sahabat-sahabat penanya. Niat dan rencana untuk belajar ke Belanda tersebut akhirnya beralih ke Betawi saja setelah dinasihati oleh Nyonya Abendanon bahwa itulah yang terbaik bagi Kartini dan adiknya Rukmini.
+
+Pada pertengahan tahun 1903 saat berusia sekitar 24 tahun, niat untuk melanjutkan studi menjadi guru di Betawi pun pupus. Dalam sebuah surat kepada Nyonya Abendanon, Kartini mengungkap tidak berniat lagi karena ia sudah akan menikah. "...Singkat dan pendek saja, bahwa saya tiada hendak mempergunakan kesempatan itu lagi, karena saya sudah akan kawin..." Padahal saat itu pihak departemen pengajaran Belanda sudah membuka pintu kesempatan bagi Kartini dan Rukmini untuk belajar di Betawi.
+
+Saat menjelang pernikahannya, terdapat perubahan penilaian Kartini soal adat Jawa. Ia menjadi lebih toleran. Ia menganggap pernikahan akan membawa keuntungan tersendiri dalam mewujudkan keinginan mendirikan sekolah bagi para perempuan bumiputra kala itu. Dalam surat-suratnya, Kartini menyebutkan bahwa sang suami tidak hanya mendukung keinginannya untuk mengembangkan ukiran Jepara dan sekolah bagi perempuan bumiputra saja, tetapi juga disebutkan agar Kartini dapat menulis sebuah buku.
+
+Perubahan pemikiran Kartini ini menyiratkan bahwa dia sudah lebih menanggalkan egonya dan menjadi manusia yang mengutamakan transendensi, bahwa ketika Kartini hampir mendapatkan impiannya untuk bersekolah di Betawi, dia lebih memilih berkorban untuk mengikuti prinsip patriarki yang selama ini ditentangnya, yakni menikah dengan Adipati Rembang.
+
+Buku
+Habis Gelap Terbitlah Terang
+
+Sampul buku versi Armijn Pane.
+Pada 1922, oleh Empat Saudara, Door Duisternis Tot Licht disajikan dalam bahasa Melayu dengan judul Habis Gelap Terbitlah Terang; Boeah Pikiran. Buku ini diterbitkan oleh Balai Pustaka. Armijn Pane, salah seorang sastrawan pelopor Pujangga Baru, tercatat sebagai salah seorang penerjemah surat-surat Kartini ke dalam Habis Gelap Terbitlah Terang. Ia pun juga disebut-sebut sebagai Empat Saudara.
+Pada 1938, buku Habis Gelap Terbitlah Terang diterbitkan kembali dalam format yang berbeda dengan buku-buku terjemahan dari Door Duisternis Tot Licht. Buku terjemahan Armijn Pane ini dicetak sebanyak sebelas kali. Selain itu, surat-surat Kartini juga pernah diterjemahkan ke dalam bahasa Jawa dan bahasa Sunda. Armijn Pane menyajikan surat-surat Kartini dalam format berbeda dengan buku-buku sebelumnya. Ia membagi kumpulan surat-surat tersebut ke dalam lima bab pembahasan. Pembagian tersebut ia lakukan untuk menunjukkan adanya tahapan atau perubahan sikap dan pemikiran Kartini selama berkorespondensi. Pada buku versi baru tersebut, Armijn Pane juga menciutkan jumlah surat Kartini. Hanya terdapat 87 surat Kartini dalam "Habis Gelap Terbitlah Terang". Penyebab tidak dimuatnya keseluruhan surat yang ada dalam buku acuan Door Duisternis Tot Licht, adalah terdapat kemiripan pada beberapa surat. Alasan lain adalah untuk menjaga jalan cerita agar menjadi seperti roman. Menurut Armijn Pane, surat-surat Kartini dapat dibaca sebagai sebuah roman kehidupan perempuan. Ini pula yang menjadi salah satu penjelasan mengapa surat-surat tersebut ia bagi ke dalam lima bab pembahasan.
+Surat-surat Kartini, Renungan Tentang dan Untuk Bangsanya
+Surat-surat Kartini juga diterjemahkan oleh Sulastin Sutrisno. Pada mulanya Sulastin menerjemahkan Door Duisternis Tot Licht di Universitas Leiden, Belanda, saat ia melanjutkan studi di bidang sastra tahun 1972. Salah seorang dosen pembimbing di Leiden meminta Sulastin untuk menerjemahkan buku kumpulan surat Kartini tersebut. Tujuan sang dosen adalah agar Sulastin bisa menguasai bahasa Belanda dengan cukup sempurna. Kemudian, pada 1979, sebuah buku berisi terjemahan Sulastin Sutrisno versi lengkap Door Duisternis Tot Licht pun terbit.
+Buku kumpulan surat versi Sulastin Sutrisno terbit dengan judul Surat-surat Kartini, Renungan Tentang dan Untuk Bangsanya. Menurut Sulastin, judul terjemahan seharusnya menurut bahasa Belanda adalah: "Surat-surat Kartini, Renungan Tentang dan Untuk Bangsa Jawa". Sulastin menilai, meski tertulis Jawa, yang didamba sesungguhnya oleh Kartini adalah kemajuan seluruh bangsa Indonesia.
+Buku terjemahan Sulastin malah ingin menyajikan lengkap surat-surat Kartini yang ada pada Door Duisternis Tot Licht. Selain diterbitkan dalam Surat-surat Kartini, Renungan Tentang dan Untuk Bangsanya, terjemahan Sulastin Sutrisno juga dipakai dalam buku Kartini, Surat-surat kepada Ny RM Abendanon-Mandri dan Suaminya.
+Letters from Kartini, An Indonesian Feminist 1900–1904
+Buku lain yang berisi terjemahan surat-surat Kartini adalah Letters from Kartini, An Indonesian Feminist 1900-1904. Penerjemahnya adalah Joost Coté. Ia tidak hanya menerjemahkan surat-surat yang ada dalam Door Duisternis Tot Licht versi Abendanon. Joost Coté juga menerjemahkan seluruh surat asli Kartini pada Nyonya Abendanon-Mandri hasil temuan terakhir. Pada buku terjemahan Joost Coté, bisa ditemukan surat-surat yang tergolong sensitif dan tidak ada dalam Door Duisternis Tot Licht versi Abendanon. Menurut Joost Coté, seluruh pergulatan Kartini dan penghalangan pada dirinya sudah saatnya untuk diungkap.
+Buku Letters from Kartini, An Indonesian Feminist 1900-1904 memuat 108 surat-surat Kartini kepada Nyonya Rosa Manuela Abendanon-Mandri dan suaminya JH Abendanon. Termasuk di dalamnya: 46 surat yang dibuat Rukmini, Kardinah, Kartinah, dan Soematrie.
+Panggil Aku Kartini Saja
+
+Sampul Panggil Aku Kartini Saja, dikompilasi oleh Pramoedya Ananta Toer.
+Selain berupa kumpulan surat, bacaan yang lebih memusatkan pada pemikiran Kartini juga diterbitkan. Salah satunya adalah Panggil Aku Kartini Saja karya Pramoedya Ananta Toer. Buku Panggil Aku Kartini Saja terlihat merupakan hasil dari pengumpulan data dari berbagai sumber oleh Pramoedya.
+Kartini Surat-surat kepada Ny RM Abendanon-Mandri dan suaminya
+Akhir tahun 1987, Sulastin Sutrisno memberi gambaran baru tentang Kartini lewat buku Kartini Surat-surat kepada Ny RM Abendanon-Mandri dan suaminya. Gambaran sebelumnya lebih banyak dibentuk dari kumpulan surat yang ditulis untuk Abendanon, diterbitkan dalam Door Duisternis Tot Licht.
+Kartini dihadirkan sebagai pejuang emansipasi yang sangat maju dalam cara berpikir dibanding perempuan-perempuan Jawa pada masanya. Dalam surat tanggal 27 Oktober 1902, dikutip bahwa Kartini menulis pada Nyonya Abendanon bahwa dia telah memulai pantangan makan daging, bahkan sejak beberapa tahun sebelum surat tersebut, yang menunjukkan bahwa Kartini adalah seorang vegetarian.[7] Dalam kumpulan itu, surat-surat Kartini selalu dipotong bagian awal dan akhir. Padahal, bagian itu menunjukkan kemesraan Kartini kepada Abendanon. Banyak hal lain yang dimunculkan kembali oleh Sulastin Sutrisno.
+Aku Mau ... Feminisme dan Nasionalisme. Surat-surat Kartini kepada Stella Zeehandelaar 1899-1903
+Sebuah buku kumpulan surat kepada Stella Zeehandelaar periode 1899-1903 diterbitkan untuk memperingati 100 tahun wafatnya. Isinya memperlihatkan wajah lain Kartini. Koleksi surat Kartini itu dikumpulkan Dr Joost Coté, diterjemahkan dengan judul Aku Mau ... Feminisme dan Nasionalisme. Surat-surat Kartini kepada Stella Zeehandelaar 1899-1903.
+"Aku Mau ..." adalah moto Kartini. Sepenggal ungkapan itu mewakili sosok yang selama ini tak pernah dilihat dan dijadikan bahan perbincangan. Kartini berbicara tentang banyak hal: sosial, budaya, agama, bahkan korupsi.
+Kontroversi
+Question book-new.svg
+Artikel ini tidak memiliki referensi atau sumber tepercaya sehingga isinya tidak bisa dipastikan. Tolong bantu perbaiki artikel ini dengan menambahkan referensi yang layak. Tulisan tanpa sumber dapat dipertanyakan dan dihapus sewaktu-waktu.
+Cari sumber: "Kartini" – berita · surat kabar · buku · cendekiawan · JSTOR
+
+Peringatan Hari Kartini pada tahun 1953.
+Ada kalangan yang meragukan kebenaran surat-surat Kartini. Ada dugaan J.H. Abendanon, Menteri Kebudayaan, Agama, dan Kerajinan saat itu, merekayasa surat-surat Kartini. Kecurigaan ini timbul karena memang buku Kartini terbit saat pemerintahan kolonial Belanda menjalankan politik etis di Hindia Belanda, dan Abendanon termasuk yang berkepentingan dan mendukung politik etis. Hingga saat ini pun sebagian besar naskah asli surat tak diketahui keberadaannya. Menurut almarhumah Sulastin Sutrisno, jejak keturunan J.H. Abendanon pun sukar untuk dilacak Pemerintah Belanda.
+
+Penetapan tanggal kelahiran Kartini sebagai hari besar juga agak diperdebatkan. Pihak yang tidak begitu menyetujui, mengusulkan agar tidak hanya merayakan Hari Kartini saja, namun merayakannya sekaligus dengan Hari Ibu pada tanggal 22 Desember. Alasan mereka adalah agar tidak pilih kasih dengan pahlawan-pahlawan wanita Indonesia lainnya, karena masih ada pahlawan wanita lain yang tidak kalah hebat dengan Kartini seperti Cut Nyak Dhien, Martha Christina Tiahahu, Dewi Sartika dan lain-lain. Menurut mereka, wilayah perjuangan Kartini itu hanyalah di Jepara dan Rembang saja, Kartini juga tidak pernah memanggul senjata melawan penjajah. Sikapnya yang pro terhadap poligami juga bertentangan dengan pandangan kaum feminis tentang arti emansipasi wanita. Dan berbagai alasan lainnya. Pihak yang pro mengatakan bahwa Kartini tidak hanya seorang tokoh emansipasi wanita yang mengangkat derajat kaum wanita Indonesia saja, melainkan adalah tokoh nasional; artinya, dengan ide dan gagasan pembaruannya tersebut dia telah berjuang untuk kepentingan bangsanya. Cara pikirnya sudah melingkupi perjuangan nasional.
+
+Kematian Kartini yang mendadak juga menimbulkan spekulasi negatif bagi sebagian kalangan. Seperti diketahui dalam sejarah, Kartini meninggal pascamelahirkan, tepatnya empat hari setelah melahirkan. Ketika Kartini, mengandung bahkan sampai melahirkan, dia tampak sehat walafiat. Hal inilah yang mengandung kecurigaan. Efatino Febriana, dalam bukunya “Kartini Mati Dibunuh”, mencoba menggali fakta-fakta yang ada sekitar kematian Kartini. Bahkan, dalam akhir bukunya, Efatino Febriana berkesimpulan, kalau kartini mamang mati karena sudah direncanakan. Demikian pula Sitisoemandari dalam buku "Kartini, Sebuah Biografi", menduga bahwa Kartini meninggal akibat permainan jahat dari Belanda. Permainan jahat dari Belanda ingin agar Kartini bungkam dari pemikiran-pemikiran majunya yang ternyata berwawasan kebangsaan.
+
+Ketika Kartini melahirkan, dokter yang menolongnya adalah Dr van Ravesten, dan berhasil dengan selamat. Selama 4 hari pascamelahirkan, kesehatan Kartini baik-baik saja. Empat hari kemudian, dr van Ravesten menengok keadaan Kartini, dan ia tidak khawatir akan kesehatan Kartini. Ketika Ravesten akan pulang, Kartini dan Ravesten menyempatkan minum anggur sebagai tanda perpisahan. Setelah minum anggur itulah, Kartini langsung sakit dan hilang kesadaran, hingga akhirnya meninggal dunia. Sayang, saat itu tak ada autopsi. Meski demikian, pihak keluarga tidak mempedulikan desas-desus yang muncul terkait kematian Kartini, melainkan menerima peristiwa itu sebagai takdir Yang Mahakuasa. Sementara pendapat yang berbeda yang dinyatakan oleh para dokter modern pada era sekarang. Para dokter berpendapat Kartini meninggal karena mengalami preeklampsia atau tekanan darah tinggi pada ibu hamil. Namun hal ini juga tidak bisa dibuktikan karena dokumen dan catatan tentang kematian Kartini tidak ditemukan.[8][9]
+
+Peringatan
+Hari Kartini
+
+Makam R.A. Kartini di Bulu, Rembang.
+Presiden Soekarno mengeluarkan Keputusan Presiden Republik Indonesia Nomor 108 Tahun 1964, tanggal 2 Mei 1964, yang menetapkan Kartini sebagai Pahlawan Kemerdekaan Nasional sekaligus menetapkan hari lahir Kartini, tanggal 21 April, untuk diperingati setiap tahun sebagai hari besar yang kemudian dikenal sebagai Hari Kartini.
+
+Pemerintahan Orde Lama Soekarno mendeklarasikan 21 April sebagai Hari Kartini untuk mengingatkan perempuan bahwa mereka harus berpartisipasi dalam "wacana negara hegemonik pembangunan".[10] Namun, setelah tahun 1965, pemerintahan Orde Baru Soeharto mengubah citra Kartini dari emansipator wanita radikal menjadi citra yang menggambarkannya sebagai istri yang patuh dan putri yang patuh, "sebagai hanya seorang wanita berpakaian kebaya yang bisa memasak."[11] Pada kesempatan itu, yang dikenal sebagai Hari Ibu Kartini, "gadis-gadis muda harus mengenakan jaket ketat yang pas, kemeja batik, gaya rambut yang rumit, dan perhiasan berornamen ke sekolah, yang seharusnya meniru pakaian Kartini tetapi dalam kenyataannya, mengenakan pakaian ciptaan dan ansambel yang lebih ketat daripada yang pernah dia lakukan."[12]
+
+Melodi "Ibu Kita Kartini" oleh W. R. Supratman:
+'''
+
+encoder = Encoder(200, pct_bpe=0.88)  
+encoder.fit(test_corpus.split('\n'))
+
+print(encoder.tokenize(test_corpus))
+print(next(encoder.transform([test_corpus])))
+print(next(encoder.inverse_transform(encoder.transform([test_corpus]))))
+
+
+res = encoder.tokenize(test_corpus)
+print(res)
+for i in res:
+    file.write(i+"\n")
+file.close()
